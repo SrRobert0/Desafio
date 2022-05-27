@@ -1,13 +1,286 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+    margin: 0;
+    padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.mfn {
+    display: grid;
+    grid-template-columns: 95% 5%;
+}
+
+.Hmm {
+    margin: 0;
+    display: flex;
+}
+
+/* ----- Parte principal(Main) ----- */
+/* geral */
+.main {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background: rgb(0, 43, 95);
+    width: 33%;
+    height: 100vh;
+    color: rgb(245, 245, 245);
+}
+
+/* data */
+.main .data {
+    position: absolute;
+    left: 5px;
+    margin: 10px;
+    font-size: .9rem;
+}
+
+/* indicador de localização */
+.main .localizacao {
+    position: absolute;
+    right: 5px;
+    margin: 10px;
+    display: flex;
+    font-size: .9rem;
+}
+
+.main .localizacao .ionicon {
+    width: 20px;
+    height: 20px;
+    fill: white;
+    margin: 0 3px 0 0;
+}
+
+/* imagem */
+.main .imagem img{
+    width: 250px;
+    height: 250px;
+}
+
+/* informações da parte principal */
+.main .infos {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: flex-end;
+    gap: .75rem;
+    margin: 0 0 0 0;
+    width: 75%;
+    height: 96vh;
+    text-align: left;
+    font-size: 1.25rem;
+}
+
+.main .vento, .main .umidade, .main .visibilidade, .main .pressao {
+    width: 100%;
+    margin: 0 0 0 20px;
+}
+
+/* tempo */
+.main .tempo {
+    margin: 0 0 10px 0;
+    text-transform: capitalize;
+}
+
+/* temperatura */
+.main .temperatura {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin: 0 0 1.5rem 0;
+}
+
+.main .temp-atual {
+    font-size: 5rem;
+}
+
+.main .maxmin {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    font-size: 2rem;
+}
+
+.main .maxmin svg {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.main .maxmin svg rect {
+    fill: none;
+}
+
+.main .max, .min {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* vento */
+.main .vento {
+    display: flex;
+    gap: 10px;
+}
+
+.main .direcao svg {
+    margin: 0 10px 0 10px;
+    width: 25px;
+    fill: white;
+}
+
+/* umidade */
+.main .umidade .inputUmidade {
+    margin: 5px 0 0 0;
+    width: 100%;
+}
+
+.main .umidade .inputUmidade .indicadores {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ----- Previsões(Forecast) ----- */
+/* geral */
+.forecast {
+    background: rgba(0, 43, 95, 0.6);
+    width: 67%;
+    height: 100vh;
+    color: rgb(245, 245, 245);;
+}
+
+/* lista */
+.forecast ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0px;
+    width: 100%;
+    height: 100vh;
+    list-style: none;
+}
+
+.forecast li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: rgb(0, 43, 95);
+    width: 70%;
+    height: 100px;
+}
+
+/* temperatura */
+.forecast .temps {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.forecast .max {
+    color: rgb(255, 54, 54);
+}
+
+.forecast .min {
+    color: rgb(0, 200, 255);
+}
+
+/* data */
+.forecast .data {
+    margin: 0 0 0 40px;
+    text-transform: capitalize;
+}
+
+/* ----- Navegação(Navigation) ----- */
+/* geral */
+.navigation {
+    display: flex;
+    justify-content: center;
+    background: rgb(0, 43, 95);
+    width: 5%;
+    min-width: 70px;
+    height: 100vh;
+    color: rgb(235, 255, 255);
+}
+
+.navigation svg {
+    margin: 10px 0 0 0;
+    width: 40px;
+    height: 40px;
+    fill: white;
+}
+
+/* dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown .link {
+    margin: 10px 0 0 0;
+    padding: 0 5px 5px 5px;
+    background: none;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px black;
+    transition: background 150ms;
+}
+
+.dropdown .link:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.dropdown .dropdownMenu {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    transform: translateX(15px);
+    opacity: 0;
+    padding: 20px;
+    background-color: rgb(0, 43, 95);
+    box-shadow: 2px 0 5px black;
+    color: white;
+    pointer-events: none;
+    transition: opacity .15s ease-in-out;
+}
+
+.dropdown > .link:focus + .dropdownMenu,
+.dropdownMenu:hover {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.dropdownMenu .barraBusca {
+    display: flex;
+    flex-direction: row;
+    border: solid 1px rgba(0, 0, 0, 0.5);
+}
+
+.dropdownMenu input, .dropdownMenu button {
+    border: solid 1px rgba(0, 0, 0, 0.5);
+    outline: none;
+}
+
+.dropdownMenu input {
+    width: 300px;
+    padding: 10px 5px 0 5px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    font-size: 12pt;
+}
+
+.dropdownMenu button {
+    padding: 5px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}  
+
+/* ----- Rodape ----- */
+.rodape {
+    position: absolute;
+    left: 50%;
+    bottom: 0%;
+    transform: translate(-50%);
+    color: white;
 }

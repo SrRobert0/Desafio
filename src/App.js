@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import Main from './partes/main';
+import Forecast from './partes/forecast';
+
+// Separei essa parte em duas para manter mais organizado.
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div class="Hmm">
+        <Main />
+        <Forecast />
+
+        <footer class="rodape">
+          Criado por Roberto Willian
+        </footer>
     </div>
   );
 }

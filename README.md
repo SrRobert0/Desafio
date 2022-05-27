@@ -6,7 +6,7 @@ Essa foi uma aplicação bem simples que fiz em React. <br>
 Utilizei poucos recursos e, como sou iniciante, devo ter cometido vários erros. <br>
 E além disso, o front-end ficou bem fraquinho. Nunca fui bom em front-end.
 
-Fiz esse projeto com o objetivo de completar um desafio e acabei aprendendo muito sobre React e como consumir APIs.
+Fiz esse projeto com o objetivo de completar um desafio e, com isso, acabei aprendendo muito sobre React e como consumir APIs.
 
 
 ## Requisitos para rodar o projeto

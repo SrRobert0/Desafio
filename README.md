@@ -36,5 +36,3 @@ Acabei deixando a key da minha conta no código pois não pretendo utiliza-lo ma
 Essa parte eu deixei documentada no código.
 
 Obs: Talvez o código não tenha ficado bem documentado pois é minha primeira vez nisso.
-�
-�
